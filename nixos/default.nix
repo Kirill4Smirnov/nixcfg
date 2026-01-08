@@ -45,6 +45,6 @@
     };
 
     users.users.${config.nixcfg.username}.extraGroups =
-      lib.optional config.programs.wireshark.enable "wireshark"
+      lib.optional config.programs.wireshark.enable "wireshark";
   };
 }
