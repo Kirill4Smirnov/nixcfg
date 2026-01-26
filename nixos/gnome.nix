@@ -11,8 +11,8 @@
   config = lib.mkIf config.nixcfg.gnome.enable {
     nixcfg.desktop = true;
     
-  services.xserver = lib.mkIf (config.services.xserver.enable or false) {
-    enable = lib.mkDefault true;
+  services.xserver = {
+    enable = lib.mkDefault false;
     
     xkb.layout = lib.mkIf (config.i18n.defaultLocale == "ru_RU.UTF-8") (lib.mkDefault "us,ru");
     xkb.options = lib.mkDefault "grp:win_space_toggle";
